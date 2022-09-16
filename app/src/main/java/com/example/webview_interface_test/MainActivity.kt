@@ -1,18 +1,12 @@
 package com.example.webview_interface_test
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.View
 import android.webkit.JavascriptInterface
-import android.webkit.WebResourceError
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
@@ -62,8 +56,13 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     @JavascriptInterface
-                    fun handleUserAction(param: String, action: String) {
-                        showToast("handle", param, action)
+                    fun addProductToCart(itemId: String) {
+                        showToast("addProductToCart", itemId)
+                    }
+
+                    @JavascriptInterface
+                    fun subscribeToStream(streamId: String) {
+                        showToast("subscribeToStream", streamId)
                     }
                 },
                 "NativeAndroid"
