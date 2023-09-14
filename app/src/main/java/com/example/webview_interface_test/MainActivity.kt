@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                 domStorageEnabled = true
                 javaScriptCanOpenWindowsAutomatically = true
                 loadWithOverviewMode = true
+                mediaPlaybackRequiresUserGesture = false
             }
 
             addJavascriptInterface(
@@ -61,8 +62,8 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     @JavascriptInterface
-                    fun subscribeToStream(streamId: String) {
-                        showToast("subscribeToStream", streamId)
+                    fun trackEvent(args: String?) {
+                        showToast("trackEvent", args)
                     }
                 },
                 "NativeAndroid"
